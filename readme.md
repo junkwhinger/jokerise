@@ -11,7 +11,7 @@ Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pyto
 ## Getting Started
 
 ```bash
-$ git clone https://github.com/junkwhinger/jokeriser.git
+$ git clone https://github.com/junkwhinger/jokerise.git
 $ cd jokeriser
 ```
 
