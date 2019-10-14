@@ -70,3 +70,12 @@ python demo.py --webcam --show-original
 ![](translated_samples/kim.jpg)
 
 ![](translated_samples/joaquin.gif)
+
+
+
+## Reference
+
+- Detectron2 https://github.com/facebookresearch/detectron2/tree/master/detectron2
+- CycleGAN https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models
+- facenet-pytorch https://github.com/timesler/facenet-pytorch
+- Face detection with OpenCV and deep learning https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/
