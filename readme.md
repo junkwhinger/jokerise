@@ -2,7 +2,7 @@
 
 ![](translated_samples/joaquin.jpg)
 
-Not sure if Joker face would look good on you? Try jokeriser!
+Not sure if Joker face would look good on you for Halloween? Try jokeriser!
 
 Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pytorch">facenet_pytorch</a>  and translate your face to a Joker's using a generator trained with <a href="https://arxiv.org/pdf/1703.10593.pdf">CycleGAN</a>. 
 
