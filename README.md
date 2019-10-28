@@ -4,9 +4,7 @@
 
 Not sure if Joker face would look good on you for Halloween? Try jokeriser!
 
-Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pytorch">facenet_pytorch</a>  and translate your face to a Joker's using a generator trained with <a href="https://arxiv.org/pdf/1703.10593.pdf">CycleGAN</a>. 
-
-<br>
+Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pytorch">facenet_pytorch</a> and translate your face to a Joker's using a generator trained with <a href="https://arxiv.org/pdf/1703.10593.pdf">CycleGAN</a>.
 
 ## Getting Started
 
@@ -34,14 +32,11 @@ $ ./demo.py --webcam
 $ ./demo.py --webcam --show-original
 ```
 
-<br>
-
 ### Note
 
 - Works well on Ubuntu 18.04 LTS and OSX environment.
   - Not sure about other platforms.
 
-<br>
 
 ## CycleGAN Training Details
 
@@ -55,8 +50,6 @@ $ ./demo.py --webcam --show-original
   - number of residual blocks: 6
   - epochs: 200
 
-<br>
-
 ## Have Fun!
 
 ![](translated_samples/joaquin.jpg)
@@ -68,8 +61,6 @@ $ ./demo.py --webcam --show-original
 ![](translated_samples/kim.jpg)
 
 ![](translated_samples/joaquin.gif)
-
-
 
 ## Reference
 
