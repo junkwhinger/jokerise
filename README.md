@@ -4,7 +4,7 @@
 
 Not sure if Joker face would look good on you for Halloween? Try jokeriser!
 
-Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pytorch">facenet_pytorch</a> and translate your face to a Joker's using a generator trained with <a href="https://arxiv.org/pdf/1703.10593.pdf">CycleGAN</a>.
+Jokeriser finds your face with [facenet_pytorch](https://github.com/timesler/facenet-pytorch) and translate your face to a Joker's using a generator trained with [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf).
 
 ## Getting Started
 
@@ -37,14 +37,13 @@ $ ./demo.py --webcam --show-original
 - Works well on Ubuntu 18.04 LTS and OSX environment.
   - Not sure about other platforms.
 
-
 ## CycleGAN Training Details
 
 - Dataset
   - Joaquin Phoenix's and Heath Ledger's joker faces from Google (300 images)
   - Randomly selected faces from CelebA dataset (300 images)
 - Preprocessing
-  - cropped faces with <a href="https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/">OpenCV</a>
+  - cropped faces with [OpenCV](https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/)
 - Training details
   - image size: 3x128x128
   - number of residual blocks: 6
