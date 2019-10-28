@@ -7,7 +7,7 @@ import torchvision.transforms as tvtransforms
 from torchvision.utils import make_grid
 
 from facenet_pytorch import MTCNN
-from network import Generator
+from jokerise.network import Generator
 
 
 class FaceDetector:

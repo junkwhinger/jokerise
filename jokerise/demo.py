@@ -5,8 +5,8 @@ import numpy as np
 import cv2
 import tqdm
 
-from predictor import VisualisationDemo
-from utils import save_video
+from jokerise.predictor import VisualisationDemo
+from jokerise.utils import save_video
 
 
 def get_parser():
