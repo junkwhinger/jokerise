@@ -7,7 +7,7 @@ setup(name='jokerise',
       author_email='junkwhinger@me.com',
       url='https://github.com/junkwhinger/jokerise',
       packages=['jokerise'],
-      pakage_data={'jokerise': ['model_weights/e200_net_G_A.pth']},
+      package_data={'jokerise': ['model_weights/e200_net_G_A.pth']},
       python_requires='>=3.6',
       install_requires=[
           'opencv_python_headless==4.1.1.26',
