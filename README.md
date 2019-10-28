@@ -14,7 +14,7 @@ Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pyto
 
 ```bash
 $ git clone https://github.com/junkwhinger/jokerise.git
-$ cd jokeriser
+$ cd jokerise
 $ pip install -e . # python version >= 3.6
 ```
 
