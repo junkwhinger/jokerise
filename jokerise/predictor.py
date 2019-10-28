@@ -108,25 +108,22 @@ class FaceTranslator:
     def __init__(self, cfg):
         self.face_model = FaceDetector(cfg)
         self.translator_model = Translator(cfg)
-        self.original_image = None
-        self.face_boxes = None
 
     def __call__(self, original_image):
-        self.original_image = original_image
-        self.translated_image = deepcopy(original_image)
-        self.face_boxes = self.face_model(original_image)
+        translated_image = deepcopy(original_image)
+        face_boxes = self.face_model(original_image)
 
-        if len(self.face_boxes) >= 1:
-            for box in self.face_boxes:
+        if len(face_boxes) >= 1:
+            for box in face_boxes:
                 sx, sy, ex, ey = box
-                face_patch = self.original_image[sy:ey, sx:ex, :]
+                face_patch = original_image[sy:ey, sx:ex, :]
                 translated_patch = self.translator_model(face_patch)
 
                 if translated_patch.shape[:2] != (ey - sy, ex - sx):
-                    return self.translated_image
-                self.translated_image[sy:ey, sx:ex, :] = translated_patch
+                    break
+                translated_image[sy:ey, sx:ex, :] = translated_patch
 
-        return self.translated_image
+        return translated_image
 
 
 class VisualisationDemo(object):
