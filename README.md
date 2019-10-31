@@ -43,6 +43,7 @@ $ ./demo.py --webcam --show-original
 
 - Works well on Ubuntu 18.04 LTS and OSX environment.
   - Not sure about other platforms.
+- Python version >= 3.6
 
 ## CycleGAN Training Details
 
