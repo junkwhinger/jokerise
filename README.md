@@ -2,11 +2,18 @@
 
 ![](translated_samples/joaquin.jpg)
 
-Not sure if Joker face would look good on you for Halloween? Try jokeriser!
+Not sure if Joker face would look good on you for Halloween?
+[Try jokeriser!](https://jokerise.hyojun.me)
 
-Jokeriser finds your face with [facenet_pytorch](https://github.com/timesler/facenet-pytorch) and translate your face to a Joker's using a generator trained with [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf).
+Jokeriser finds your face with [facenet_pytorch](https://github.com/timesler/facenet-pytorch)
+and translate your face to a Joker's using a generator trained with [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf).
 
 ## Getting Started
+
+There is [another repository](https://github.com/devinjeon/jokerise-web)
+which implements this as a web service.
+
+You can also jokerise your photo in the web service: [Link](https://jokerise.hyojun.me)
 
 ### Install
 
