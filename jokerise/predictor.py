@@ -110,20 +110,21 @@ class FaceTranslator:
         self.translator_model = Translator(cfg)
 
     def __call__(self, original_image):
-        translated_image = deepcopy(original_image)
         face_boxes = self.face_model(original_image)
 
         if len(face_boxes) >= 1:
+            translated_image = deepcopy(original_image)
             for box in face_boxes:
                 sx, sy, ex, ey = box
                 face_patch = original_image[sy:ey, sx:ex, :]
                 translated_patch = self.translator_model(face_patch)
 
                 if translated_patch.shape[:2] != (ey - sy, ex - sx):
-                    break
+                    return translated_image
                 translated_image[sy:ey, sx:ex, :] = translated_patch
+        else:
+            return original_image
 
-        return translated_image
 
 
 class VisualisationDemo(object):
