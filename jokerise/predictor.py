@@ -7,7 +7,8 @@ import torchvision.transforms as tvtransforms
 from torchvision.utils import make_grid
 
 from facenet_pytorch import MTCNN
-from network import Generator
+from jokerise.network import Generator
+
 
 class FaceDetector:
 
@@ -32,30 +33,31 @@ class FaceDetector:
         if self.box_multiply_factor != 1.0:
             _tmp = []
             for box in boxes:
-                _tmp.append(self.modify_box(box, self.box_multiply_factor, frame_info))
+                _tmp.append(
+                    self.modify_box(box, self.box_multiply_factor, frame_info))
             face_boxes = _tmp
         else:
             face_boxes = boxes
-        
+
         return face_boxes
 
     def modify_box(self, box_coord, mult_factor, frame_info):
         startX, startY, endX, endY = box_coord
-            
+
         width = endX - startX
         height = endY - startY
-        
+
         max_side = int(max(width, height) * mult_factor)
         half_diameter = int(max_side / 2.0)
-        
+
         cX = int((startX + endX) / 2.0)
         cY = int((startY + endY) / 2.0)
-        
+
         startX_new = cX - half_diameter
         startY_new = cY - half_diameter
         endX_new = cX + half_diameter
         endY_new = cY + half_diameter
-        
+
         h, w, c = frame_info
         startX_new = max(0, startX_new)
         startY_new = max(0, startY_new)
@@ -68,10 +70,12 @@ class FaceDetector:
 class Translator:
 
     def __init__(self, cfg):
-        self.translator = Generator(cfg.in_ch, cfg.out_ch, cfg.ngf, cfg.n_blocks)
+        self.translator = Generator(cfg.in_ch, cfg.out_ch, cfg.ngf,
+                                    cfg.n_blocks)
         self.transform_fn = self.get_transform_fn(cfg.img_size)
 
-        self.translator.load_state_dict(torch.load(cfg.generator_weight_path, map_location="cpu"))
+        self.translator.load_state_dict(
+            torch.load(cfg.generator_weight_path, map_location="cpu"))
 
     def __call__(self, image):
         input_pil = Image.fromarray(image[:, :, ::-1])
@@ -80,11 +84,13 @@ class Translator:
 
         with torch.no_grad():
             translated_tensor = self.translator(input_tensor)
-            translated_image = make_grid(translated_tensor.cpu(), normalize=True).numpy().transpose(1, 2, 0)[:,:,::-1] * 255.
-            
+            translated_image = make_grid(translated_tensor.cpu(),
+                                         normalize=True).numpy().transpose(
+                                             1, 2, 0)[:, :, ::-1] * 255.
+
             height, width, _ = image.shape
             resized_image = cv2.resize(translated_image, (height, width))
-        
+
         return resized_image
 
     def get_transform_fn(self, img_size):
@@ -116,7 +122,7 @@ class FaceTranslator:
                 face_patch = self.original_image[sy:ey, sx:ex, :]
                 translated_patch = self.translator_model(face_patch)
 
-                if translated_patch.shape[:2] != (ey-sy, ex-sx):
+                if translated_patch.shape[:2] != (ey - sy, ex - sx):
                     return self.translated_image
                 self.translated_image[sy:ey, sx:ex, :] = translated_patch
 
@@ -124,9 +130,10 @@ class FaceTranslator:
 
 
 class VisualisationDemo(object):
+
     def __init__(self, cfg):
         self.predictor = FaceTranslator(cfg)
-        
+
     def _frame_from_video(self, video):
         while video.isOpened():
             success, frame = video.read()
@@ -141,7 +148,6 @@ class VisualisationDemo(object):
             image (cv2.imread)
         """
         return image, self.predictor(image)
-
 
     def run_on_video(self, video):
         """
