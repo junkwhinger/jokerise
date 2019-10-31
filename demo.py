@@ -1,3 +1,5 @@
+#!/usr/env/bin python3
+
 # reference: https://github.com/facebookresearch/detectron2/blob/master/demo/demo.py
 import os
 import argparse

@@ -10,38 +10,36 @@ Jokeriser finds your face with <a href="https://github.com/timesler/facenet-pyto
 
 ## Getting Started
 
+### Install
+
 ```bash
 $ git clone https://github.com/junkwhinger/jokerise.git
-$ cd jokeriser
-```
-
-### Install dependencies
-
-```bash
-pip install -r requirements.txt
+$ cd jokerise
+$ pip install -e . # python version >= 3.6
 ```
 
 ### How to jokerise
 
 ```bash
 # image
-python demo.py --input samples/joaquin.jpg
+$ ./demo.py --input samples/joaquin.jpg
 
 # video
-python demo.py --input samples/joaquin.mp4
+$ ./demo.py --input samples/joaquin.mp4
 
 # webcam
-python demo.py --webcam
+$ ./demo.py --webcam
 
 # wanna see original & tranlsated version side by side?
-python demo.py --webcam --show-original
+$ ./demo.py --webcam --show-original
 ```
 
 <br>
 
 ### Note
 
-- I tested my code in OSX environment. Not sure if it works well on other platforms.
+- Works well on Ubuntu 18.04 LTS and OSX environment.
+  - Not sure about other platforms.
 
 <br>
 
