@@ -1,4 +1,4 @@
-#!/usr/env/bin python3
+#!/usr/bin/env python3
 
 # reference: https://github.com/facebookresearch/detectron2/blob/master/demo/demo.py
 import os
@@ -49,7 +49,7 @@ def get_parser():
                         help="number of residual blocks for CycleGAN generator")
     parser.add_argument("--generator-weight-path",
                         type=str,
-                        default="model_weights/e200_net_G_A.pth",
+                        default="jokerise/model_weights/e200_net_G_A.pth",
                         help="model weight file path for CycleGAN generator")
 
     parser.add_argument("--show-original",
