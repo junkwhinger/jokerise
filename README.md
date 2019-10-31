@@ -1,11 +1,11 @@
-# Jokeriser with CycleGAN
+# Jokerise with CycleGAN
 
 ![](translated_samples/joaquin.jpg)
 
 Not sure if Joker face would look good on you for Halloween?
 [Try jokeriser!](https://jokerise.hyojun.me)
 
-Jokeriser finds your face with [facenet_pytorch](https://github.com/timesler/facenet-pytorch)
+Jokerise finds your face with [facenet_pytorch](https://github.com/timesler/facenet-pytorch)
 and translate your face to a Joker's using a generator trained with [CycleGAN](https://arxiv.org/pdf/1703.10593.pdf).
 
 ## Getting Started
