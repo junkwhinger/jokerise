@@ -10,10 +10,10 @@ and translate your face to a Joker's using a generator trained with [CycleGAN](h
 
 ## Getting Started
 
-There is [another repository](https://github.com/devinjeon/jokerise-web)
-which implements this as a web service.
+There is a [another repository](https://github.com/devinjeon/jokerise-web)
+which implements this project as a web service.
 
-You can also jokerise your photo in the web service: [Link](https://jokerise.hyojun.me)
+You can also jokerise your photo in [the web service](https://jokerise.hyojun.me)
 
 ### Install
 
