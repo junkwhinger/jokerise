@@ -125,6 +125,7 @@ class FaceTranslator:
         else:
             return original_image
 
+        return translated_image
 
 
 class VisualisationDemo(object):
