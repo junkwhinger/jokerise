@@ -15,7 +15,7 @@ setup(name='jokerise',
           'facenet_pytorch==0.3.1',
           'numpy==1.17.2',
           'torchvision==0.4.1',
-          'Pillow==6.2.0',
+          'Pillow==8.2.0',
           'celluloid==0.2.0',
           'matplotlib==3.1.1',
           'tqdm==4.36.1'
