@@ -10,7 +10,7 @@ setup(name='jokerise',
       package_data={'jokerise': ['model_weights/e200_net_G_A.pth']},
       python_requires='>=3.6',
       install_requires=[
-          'opencv_python_headless==4.1.1.26',
+          'opencv_python_headless==4.2.0.32',
           'torch==1.3.0',
           'facenet_pytorch==0.3.1',
           'numpy==1.17.2',
